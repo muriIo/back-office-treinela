@@ -1,0 +1,11 @@
+nav {
+    position: fixed;
+    height: 65px;
+    width: 100vw;
+}
+
+.routerDiv {
+    margin-top: 65px;
+    width: 100vw;
+    height: calc(100% - 65px);
+}

@@ -1,0 +1,18 @@
+<div style="display: flex; justify-content: center; margin-bottom: 10px;">
+    <img src="../../assets/images/foto-login.png" alt="foto-login">
+</div>
+
+<form style="margin-left:25%; margin-right: 25%; margin-bottom:5px">
+    <div class="mb-4">
+        <label for="email" class="form-label">Email</label>
+        <input [(ngModel)]="email" type="text" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-4">
+        <label for="senha" class="form-label">Senha</label>
+        <input [(ngModel)]="senha" type="password" class="form-control" id="senha" name="senha" required>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-bottom: 10%;">
+        <button type="button" class="btn btn-danger" (click)="verificacaoLogin()">Acessar</button>
+    </div>
+</form>

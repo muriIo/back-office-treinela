@@ -1,0 +1,43 @@
+<div *ngIf="!editando && !adicionando">
+    <div style="display: flex; justify-content: center; margin: 10px;cursor: pointer;">
+        <p style="text-decoration: none; color: black; font-size: larger;" (click)="editaCurso(null)">Adicionar curso +
+        </p>
+    </div>
+    <div style="display: flex; justify-content: center; margin: 10px; cursor: pointer;" *ngFor="let curso of cursos">
+        <p style="text-decoration: none; color: black; font-size: larger;" (click)="editaCurso(curso)">{{curso.name}}
+        </p>
+    </div>
+</div>
+
+
+<div class="container" *ngIf="editando || adicionando">
+    <div class="row">
+        <div class="col-12">
+            <h2 *ngIf="editando">Editando</h2>
+            <h2 *ngIf="adicionando">Adicionando</h2>
+            <form action="" method="POST">
+                <div class="mb-4">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input [(ngModel)]="cursoEditando.name" type="text" class="form-control" id="nome" name="nome"
+                        required>
+                </div>
+                <!-- <div class="mb-4">
+                    <label for="urlFoto" class="form-label">Url Foto</label>
+                    <input type="text" class="form-control" id="urlFoto" name="urlFoto" required>
+                </div> -->
+                <div class="mb-4">
+                    <label for="qtdHoras" class="form-label">Quantidade de Horas</label>
+                    <input [(ngModel)]="cursoEditando.duration" type="text" class="form-control" id="qtdHoras"
+                        name="qtdHoras" required>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10%;">
+                    <button type="button" class="btn btn-secondary" (click)="voltar()">Voltar</button>
+                    <button type="reset" class="btn btn-danger" (click)="deletar()">Deletar</button>
+                    <button type="submit" class="btn btn-primary" (click)="salvar()">{{editando ? 'Salvar' :
+                        'Adicionar'}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
